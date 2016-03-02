@@ -8,7 +8,7 @@
                     <p class="category">Untuk Posting Blog ...</p>
                 </nav>
                 <nav class="pull-right">
-                    {!! link_to_route('blog.create', 'Tambah Post',$parameters = array() , array('class'=>'btn btn-primary btn-block')); !!}
+                    {!! link_to_route('blog.create', 'Tambah Article',$parameters = array() , array('class'=>'btn btn-primary btn-block')); !!}
                 </nav>
             </div>
             <div class="content table-responsive table-full-width">

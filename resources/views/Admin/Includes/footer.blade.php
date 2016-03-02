@@ -7,7 +7,7 @@
 		                                Home
 		                            </a>
 		                        </li>
- 
+
 		                    </ul>
 		                </nav>
 		                <p class="copyright pull-right">
@@ -20,12 +20,15 @@
 		</div>
 	</body>
 
+    @if (Session::has('sweet_alert.alert'))
+        <script>
+          swal({!! Session::get('sweet_alert.alert') !!});
+        </script>
+    @endif
     {{ Html::script('assets/js/jquery.min.js') }}
     {{ Html::script('assets/js/bootstrap.min.js') }}
 
-	{{ Html::script('bower_components/bootstrap-datepicker/dist/js/bootstrap-datepicker.js') }}
 
-    {{ Html::script('bower_components/moment/moment.js') }}
     {{ Html::script('assets/js/bootstrap-multiselect.js') }}
 
 	{{-- Checkbox, Radio & Switch Plugins --}}
@@ -40,15 +43,12 @@
     {{-- Light Bootstrap Table Core javascript and methods for Demo purpose --}}
     {{ Html::script('assets/js/light-bootstrap-dashboard.js') }}
 
-
 	{{-- Light Bootstrap Table DEMO methods, don't include it in your project! --}}
     {{ Html::script('assets/js/demo.js') }}
-	
+
 	<script type="text/javascript">
         $(document).ready(function() {
             $('#multiselect').multiselect();
-            $('.datepicker').datepicker();
-            var now = moment();
         });
     </script>
 </html>

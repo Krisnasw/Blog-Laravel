@@ -22,6 +22,9 @@
         {{-- Light Bootstrap Table core CSS    --}}
         {{ Html::style('assets/css/light-bootstrap-dashboard.css') }}
 
+        {{-- SweetAlert Plugins   --}}
+        {{ Html::style('assets/plugin/sweetalert/sweetalert.css') }}
+        {{ Html::script('assets/plugin/sweetalert/sweetalert.min.js') }}
         <!--     Fonts and icons     -->
         {{ Html::style('assets/css/font-awesome.min.css') }}
         {{ Html::style('http://fonts.googleapis.com/css?family=Roboto:400,700,300') }}

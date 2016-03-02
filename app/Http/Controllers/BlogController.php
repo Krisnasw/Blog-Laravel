@@ -6,11 +6,14 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Input;
-use Redirect;
-use Validator;
 
 use App\Blog;
 use App\Category;
+use File;
+use Redirect;
+use Validator;
+use Alert;
+
 
 class BlogController extends Controller
 {
@@ -65,7 +68,9 @@ class BlogController extends Controller
         $blog = Blog::create($data);
 
         $blog->category()->attach($request->input('category'));
-        return Redirect::to('blog')->with('message','Post Berhasil Di tambah');
+        // return Redirect::to('blog')->with('message','Post Berhasil Di tambah');
+        Alert::success('Article Baru Sudah di buat','Create');
+        return Redirect::to('blog');
 
     }
 
@@ -95,7 +100,6 @@ class BlogController extends Controller
         $category = Category::where('type','Blog')->get();
 
         return view('Admin.Blog.Includes.update')->with(['blog' => $blog ,'category'=>$category]);
-
     }
 
     /**
@@ -110,6 +114,8 @@ class BlogController extends Controller
         $blog = Blog::find($id);
 
         if ($request->hasFile('image')) {
+            $blog['image'] = $this->deletePhoto($blog->image);
+
             $blog['image'] = $this->savePhoto($request->file('image'));
             $blog->image = $blog['image'];
         }
@@ -118,8 +124,8 @@ class BlogController extends Controller
         $blog->save();
         $blog->category()->sync($request->get('category'));
 
-        return Redirect::to('blog')->with('message','Post Berhasil Di Ubah');
-
+        Alert::info('Article baru anda Ubah','Edit');
+        return Redirect::to('blog');
 
     }
 
@@ -132,11 +138,14 @@ class BlogController extends Controller
     public function destroy($id)
     {
         //
-        Blog::find($id)->delete();
-        return Redirect::to('blog')->with('message','Post Berhasil Di Delete');
-
+        $blog = Blog::find($id);
+        $deleteImage = $this->deletePhoto($blog->image);
+        $blog->delete();
+        Alert::info('Article baru anda Hapus','Delete');
+        return Redirect::to('blog');
     }
 
+    // Class Bikinan -->> buat foto
     protected function savePhoto($photo)
     {
         $destinationPath = 'image';
@@ -148,4 +157,13 @@ class BlogController extends Controller
 
         return $blog['image'];
     }
+
+
+    protected function deletePhoto($photo)
+    {
+        File::delete($photo);
+        return $photo;
+    }
+
+
 }
