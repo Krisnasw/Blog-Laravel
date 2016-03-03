@@ -39,5 +39,6 @@ class RelationCategoryBlog extends Migration
     public function down()
     {
         //
+        Schema::drop('tb_relation_blog');
     }
 }

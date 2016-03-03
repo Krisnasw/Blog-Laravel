@@ -9,7 +9,7 @@ class Category extends Model
     //
     protected $table = 'tb_category';
 
-    protected $fillable = array('category','type');
+    protected $fillable = array('category','type','slug');
 
 
     public function blog() {

@@ -37,7 +37,7 @@ class BlogController extends Controller
     public function create()
     {
         //
-        $category = Category::where('type','Blog')->get();
+        $category = Category::where('type','Article')->get();
         return view('Admin.Blog.Includes.create',['category'=>$category]);
     }
 
@@ -62,11 +62,10 @@ class BlogController extends Controller
         $data = array(
                       'title' => Input::get('title'),
                       'article' => Input::get('article'),
+                      'slug' => str_slug(Input::get('title'),"-"),
                       'image' => $input['image']
                  );
-
         $blog = Blog::create($data);
-
         $blog->category()->attach($request->input('category'));
         // return Redirect::to('blog')->with('message','Post Berhasil Di tambah');
         Alert::success('Article Baru Sudah di buat','Create');
@@ -97,7 +96,7 @@ class BlogController extends Controller
     {
         //
         $blog = Blog::where('id', '=', $id)->first();
-        $category = Category::where('type','Blog')->get();
+        $category = Category::where('type','Article')->get();
 
         return view('Admin.Blog.Includes.update')->with(['blog' => $blog ,'category'=>$category]);
     }
@@ -120,6 +119,7 @@ class BlogController extends Controller
             $blog->image = $blog['image'];
         }
         $blog->title = Input::get('title');
+        $blog->slug = str_slug(Input::get('title'), "-");
         $blog->article = Input::get('article');
         $blog->save();
         $blog->category()->sync($request->get('category'));

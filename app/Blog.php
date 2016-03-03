@@ -8,7 +8,7 @@ class Blog extends Model
 {
     protected $table = 'tb_blog';
 
-    protected $fillable = array('title', 'article','image');
+    protected $fillable = array('title', 'article','image','slug');
 
 
     public function category() {

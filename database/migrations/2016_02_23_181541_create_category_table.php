@@ -16,7 +16,9 @@ class CreateCategoryTable extends Migration
         Schema::create('tb_category', function (Blueprint $table) {
             $table->increments('id');
             $table->string('category');
-            $table->enum('type',['Blog','Portfolio'])->default('Blog');
+            $table->enum('type',['Article','Portfolio'])->default('Article');
+            $table->string('slug');
+
             $table->timestamps();
         });
     }
