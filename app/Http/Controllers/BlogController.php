@@ -53,7 +53,7 @@ class BlogController extends Controller
         $valid =  $this->validate($request, [
             'title' => 'required|min:10|max:255',
             'article' => 'required|min:25',
-            'image' => 'required',
+            'image' => 'required|image'
         ]);
 
         if ($request->hasFile('image')) {

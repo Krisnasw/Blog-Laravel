@@ -20,8 +20,8 @@
                                 </p>
                                 <p class="typo-line text-center">
 
-                                    <h1>{{ $blog->title }}</h1>
-                                    <p> {{ $blog->article }} </p>
+                                    <h1>{!! $blog->title !!}</h1>
+                                    <p> {!! $blog->article !!} </p>
                                 </p>
                             </div>
                             <hr>

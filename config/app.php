@@ -162,6 +162,9 @@ return [
         //HTMLCollection
         Collective\Html\HtmlServiceProvider::class,
         UxWeb\SweetAlert\SweetAlertServiceProvider::class,
+
+        //TinyMCE
+        Ktquez\Tinymce\TinymceServiceProvider::class,
     ],
 
     /*

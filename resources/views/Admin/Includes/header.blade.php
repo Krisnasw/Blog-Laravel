@@ -30,6 +30,7 @@
         {{ Html::style('http://fonts.googleapis.com/css?family=Roboto:400,700,300') }}
         {{ Html::style('assets/css/pe-icon-7-stroke.css') }}
 
+        @include('tinymce::tpl')
     </head>
 
     <body>

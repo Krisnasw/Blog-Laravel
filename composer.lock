@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "0f6a9601bce56e53adecde4bb400c396",
-    "content-hash": "7f82e904f997090a9083a30b1f465099",
+    "hash": "3cd7d93424a43f0bb665f988c5ed9343",
+    "content-hash": "78f5c05136f8a8ca1c5af76785584b42",
     "packages": [
         {
             "name": "barryvdh/laravel-debugbar",
@@ -359,6 +359,39 @@
                 "tokenizer"
             ],
             "time": "2015-12-05 17:17:57"
+        },
+        {
+            "name": "ktquez/laravel-tinymce",
+            "version": "v1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/ktquez/laravel-tinymce.git",
+                "reference": "65afeb22de3daf0268e02c020311ee32acdb7d89"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/ktquez/laravel-tinymce/zipball/65afeb22de3daf0268e02c020311ee32acdb7d89",
+                "reference": "65afeb22de3daf0268e02c020311ee32acdb7d89",
+                "shasum": ""
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Ktquez\\Tinymce\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Alan Albuquerque: ktquez",
+                    "email": "ktquez@gmail.com"
+                }
+            ],
+            "description": "TinyMCE editor for Laravel and Lumen Framework",
+            "time": "2015-07-04 18:37:27"
         },
         {
             "name": "laravel/framework",

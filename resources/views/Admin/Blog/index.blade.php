@@ -26,7 +26,7 @@
                         <tr>
                             <td>{{$x++}}</td>
                             <td>{{substr($data->title, 0,50)}}</td>
-                            <td>{{substr($data->article, 0,160)}}</td>
+                            <td>{!! substr($data->article, 0,160) !!}</td>
                             <td>
                                 <a href="{{ url('blog') }}/{{ $data->id }}" class="btn" >
                                     <i class="pe-7s-look " style="font-size: 20px; color:#4AA3DF;"></i>

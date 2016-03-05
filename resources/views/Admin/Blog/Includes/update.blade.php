@@ -23,7 +23,7 @@
                                     <div class="col-md-12">
                                         <div class="form-group">
                                             <label>Content</label>
-                                            {!! Form::textarea('article',null, array('class' => 'form-control')) !!}
+                                            {!! Form::textarea('article',null, array('class' => 'form-control','id'=>'tinymce')) !!}
                                             {{($errors->has('article')) ? $errors->first('content') : ''}}
 
                                         </div>
