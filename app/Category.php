@@ -12,7 +12,7 @@ class Category extends Model
     protected $fillable = array('category','type','slug');
 
 
-    public function blog() {
-		return $this->belongsToMany('App\Blog', 'tb_relation_blog', 'id_category', 'id_relasi');
-	}
+    // public function blog() {
+	// 	return $this->belongsToMany('App\Blog', 'tb_relation_blog', 'id_category', 'id_relasi');
+	// }
 }

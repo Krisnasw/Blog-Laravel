@@ -1824,7 +1824,10 @@ body > .navbar-collapse[data-color="purple"]:after {
 .card .image {
   width: 100%;
   overflow: hidden;
-  height: 260px;
+  /*height: 260px;*/
+  margin-bottom: 25px;
+  max-height: 260px;
+  min-height: 260px;
   border-radius: 4px 4px 0 0;
   position: relative;
   -webkit-transform-style: preserve-3d;

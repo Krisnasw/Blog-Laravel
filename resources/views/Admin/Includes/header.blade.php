@@ -16,6 +16,11 @@
         {{-- Core JS Files   --}}
         {{ Html::style('assets/css/bootstrap-multiselect.css') }}
 
+        {{--  DATE   --}}
+
+        {{ Html::style('assets/plugin/datepicker/css/bootstrap-material-datetimepicker.css') }}
+        {{ Html::style('https://fonts.googleapis.com/icon?family=Material+Icons') }}
+
         {{-- Animation library for notifications   --}}
         {{ Html::style('assets/css/animate.min.css') }}
 

@@ -39,7 +39,8 @@ return [
     |
     */
 
-    'url' => 'http://localhost',
+    'url' => 'http://christiawan.me',
+    // 'url' => 'http://localhost',
 
     /*
     |--------------------------------------------------------------------------

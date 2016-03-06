@@ -30,4 +30,5 @@ Route::get('/', function () {
 Route::group(['middleware' => ['web']], function () {
     Route::resource('blog','BlogController');
     Route::resource('category','CategoryController');
+    Route::resource('portfolio','PortfolioController');
 });

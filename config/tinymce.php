@@ -2,8 +2,8 @@
 
 return [
 
-	'cdn' => url('vendor/js/tinymce/tinymce.min.js'),
-
+	// 'cdn' => url('vendor/js/tinymce/tinymce.min.js'),
+    'cdn' => Config('app.url').'/vendor/js/tinymce/tinymce.min.js', 
 	'params' => [
 		"selector" => "#tinymce",
 		"theme" => "modern",

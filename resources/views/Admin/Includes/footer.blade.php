@@ -28,6 +28,10 @@
     {{ Html::script('assets/js/jquery.min.js') }}
     {{ Html::script('assets/js/bootstrap.min.js') }}
 
+    {{-- DatecPicker  --}}
+    {{ Html::script('http://momentjs.com/downloads/moment-with-locales.min.js') }}
+    {{ Html::script('assets/plugin/datepicker/js/bootstrap-material-datetimepicker.js') }}
+
 
     {{ Html::script('assets/js/bootstrap-multiselect.js') }}
 
@@ -49,6 +53,12 @@
 	<script type="text/javascript">
         $(document).ready(function() {
             $('#multiselect').multiselect();
+
+            $('#date').bootstrapMaterialDatePicker
+			({
+				time: false,
+				clearButton: true
+			});
         });
     </script>
 </html>
