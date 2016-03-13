@@ -9,7 +9,7 @@
                             <img src="{{ asset($portfolio->image) }}" alt="..."/>
                         </div>
                         <div class="content">
-                            {!! Form::model($portfolio, ['method' => 'PATCH', 'route' => ['portfolio.update', $portfolio->id],'files' => true]) !!}
+                            {!! Form::model($portfolio, ['method' => 'PATCH', 'route' => ['admin.portfolio.update', $portfolio->id],'files' => true]) !!}
                                 <div class="row">
                                     <div class="col-md-5">
                                         <div class="form-group">

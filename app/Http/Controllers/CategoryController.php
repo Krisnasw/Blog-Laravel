@@ -61,7 +61,7 @@ class CategoryController extends Controller
 
          Alert::success('Category Baru di buat','Create');
 
-         return Redirect::to('category');
+         return Redirect::route('admin.category.index');
 
 
     }
@@ -108,7 +108,7 @@ class CategoryController extends Controller
         $category->save();
 
         Alert::info('Category baru anda Ubah','Edit');
-        return Redirect::to('category');
+        return Redirect::route('admin.category.index');
 
     }
 
@@ -124,6 +124,6 @@ class CategoryController extends Controller
         $category = Category::find($id);
         $category->delete();
         Alert::info('Category baru anda Hapus','Delete');
-        return Redirect::to('category');
+        return Redirect::route('admin.category.index');
     }
 }

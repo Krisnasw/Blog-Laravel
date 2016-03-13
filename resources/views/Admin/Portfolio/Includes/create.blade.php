@@ -9,7 +9,7 @@
                             <h4 class="title">Create Post</h4>
                         </div>
                         <div class="content">
-							{!! Form::open(array('url'=>'/portfolio','method'=>'POST', 'files'=>true)) !!}
+							{!! Form::open(array('url'=>'admin/portfolio','method'=>'POST', 'files'=>true)) !!}
                                 <div class="row">
                                     <div class="col-md-5">
                                         <div class="form-group">

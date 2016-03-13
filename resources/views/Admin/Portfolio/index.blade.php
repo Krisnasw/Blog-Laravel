@@ -1,8 +1,5 @@
 @extends('Admin.Includes.master')
 @section('content')
-
-
-
     <div class="col-md-12">
         <div class="card">
             <div class="header">
@@ -11,7 +8,8 @@
                     <p class="category">Untuk Posting Portfolio ...</p>
                 </nav>
                 <nav class="pull-right">
-                    {!! link_to_route('portfolio.create', 'Tambah Portfolio',$parameters = array() , array('class'=>'btn btn-primary btn-block')); !!}
+                    {{-- {!! link_to_route('admin.portfolio.create', 'Tambah Portfolio',$parameters = array() , array('class'=>'btn btn-primary btn-block')); !!} --}}
+                    {!! link_to_route('admin.portfolio.create', 'Tambah Portfolio',$parameters = array() , array('class'=>'btn btn-primary btn-block')); !!}
                 </nav>
             </div>
             <div class="content table-responsive table-full-width">
@@ -22,7 +20,8 @@
     <div class="col-md-12">
             <div class="row">
             @foreach($portfolio as $data)
-                {!! Form::open(array('class' => 'form-inline', 'method' => 'DELETE', 'route' => array('portfolio.destroy', $data->id))) !!}
+                {!! Form::open(array('class' => 'form-inline', 'method' => 'DELETE', 'route' => array('admin.portfolio.destroy', $data->id))) !!}
+                {{-- {!! Form::open(array('class' => 'form-inline', 'method' => 'DELETE', 'route' => array('admin.portfolio.destroy', $data->id))) !!} --}}
                 <div class="col-md-4">
                     <div class="card">
                         <div class="header">
@@ -51,10 +50,10 @@
                         <hr style="margin-bottom: 0px;margin-top: 0px;">
                         <div class="text-center">
                             <br>
-                            <a href="{{ url('portfolio') }}/{{ $data->id }}" class="btn btn-success btn-sm btn-fill " >
+                            <a href="{{ url('admin/portfolio') }}/{{ $data->id }}" class="btn btn-success btn-sm btn-fill " >
                                 Detail
                             </a>
-                            <a href="{{ url('portfolio') }}/{{ $data->id }}/edit" class="btn  btn-fill  btn-info btn-sm" >
+                            <a href="{{ url('admin/portfolio') }}/{{ $data->id }}/edit" class="btn  btn-fill  btn-info btn-sm" >
                                 Update
                             </a>
                             {!! Form::submit("Delete", array('class' => 'btn btn-danger btn-fill  btn-sm')) !!}

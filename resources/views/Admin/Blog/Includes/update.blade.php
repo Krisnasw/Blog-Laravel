@@ -9,7 +9,7 @@
                             <img src="{{ asset($blog->image) }}" alt="..."/>
                         </div>
                         <div class="content">
-                            {!! Form::model($blog, ['method' => 'PATCH', 'route' => ['blog.update', $blog->id],'files' => true]) !!}
+                            {!! Form::model($blog, ['method' => 'PATCH', 'route' => ['admin.blog.update', $blog->id],'files' => true]) !!}
                                 <div class="row">
                                     <div class="col-md-5">
                                         <div class="form-group">

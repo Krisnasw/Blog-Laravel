@@ -11,7 +11,7 @@
                             <h4 class="title">Create Category</h4>
                         </div>
                         <div class="content">
-                            {!! Form::model($category, ['method'=>'PATCH','route' => array('category.update', $category->id)]) !!}
+                            {!! Form::model($category, ['method'=>'PATCH','route' => array('admin.category.update', $category->id)]) !!}
                                 <div class="row">
                                     <div class="col-md-12">
                                         <div class="form-group">

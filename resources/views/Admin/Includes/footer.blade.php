@@ -12,7 +12,6 @@
 		                </nav>
 		                <p class="copyright pull-right">
 		                    Made with <i class="fa fa-headphones" style="color:#2E8ECE"></i> & <i class="fa fa-heart"style="color:#EA6153"></i> from Surakarta, Indonesia.
-		                    {{-- &copy; 2016 <a href="http://www.creative-tim.com">Creative Tim</a>, <p class="love">Made with <i class="icon ion-heart"></i> by Christiawan Ekor</p> --}}
 		                </p>
 		            </div>
 		        </footer>

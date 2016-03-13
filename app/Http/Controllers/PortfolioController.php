@@ -76,7 +76,7 @@ class PortfolioController extends Controller
      $portfolio = Portfolio::create($data);
      $portfolio->category()->attach($request->input('category'));
      Alert::success('Portfolio Baru Sudah di buat','Create');
-     return Redirect::to('portfolio');
+     return Redirect::route('admin.portfolio.index');
 
 
     }
@@ -138,7 +138,7 @@ class PortfolioController extends Controller
         $portfolio->category()->sync($request->get('category'));
 
         Alert::info('Portfolio baru anda Ubah','Edit');
-        return Redirect::to('portfolio');
+        return Redirect::route('admin.portfolio.index');
     }
 
     /**
@@ -153,7 +153,7 @@ class PortfolioController extends Controller
         $deleteImage = $this->deletePhoto($portfolio->image);
         $portfolio->delete();
         Alert::info('Article baru anda Hapus','Delete');
-        return Redirect::to('portfolio');
+        return Redirect::route('admin.portfolio.index');
     }
 
 

@@ -11,7 +11,7 @@
                             <h4 class="title">Create Category</h4>
                         </div>
                         <div class="content">
-							{!! Form::open(array('url'=>'/category','method'=>'POST', 'files'=>true)) !!}
+							{!! Form::open(array('url'=>'admin/category','method'=>'POST', 'files'=>true)) !!}
                                 <div class="row">
                                     <div class="col-md-12">
                                         <div class="form-group">
@@ -32,7 +32,7 @@
                                 </div>
                                 {!! Form::submit('Submit', array('class'=>'btn btn-info btn-fill pull-right')) !!}
                                 <div class="clearfix">
-                                	
+
                                 </div>
                             {!! Form::close() !!}
                         </div>

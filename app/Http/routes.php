@@ -12,8 +12,8 @@
 */
 
 Route::get('/', function () {
-    // return view('welcome');
-    return 'hai love :)';
+    return view('home');
+    // return 'hai love :)';
 });
 
 /*
@@ -28,7 +28,33 @@ Route::get('/', function () {
 */
 
 Route::group(['middleware' => ['web']], function () {
-    Route::resource('blog','BlogController');
-    Route::resource('category','CategoryController');
-    Route::resource('portfolio','PortfolioController');
+
+    Route::group(['prefix' => 'admin'], function () {
+        Route::get('/',[
+             'uses'=>'AdminController@getLogin',
+             'as'=>'admin'
+        ]);
+        Route::post('login',[
+             'uses'=>'AdminController@postLogin',
+             'as'=>'admin.login'
+        ]);
+        Route::get('logout',[
+             'uses'=>'AdminController@getLogout',
+             'as'=>'admin.logout'
+        ]);
+
+        Route::group(['middleware'=>'auth'],function(){
+            Route::get('dashboard',[
+                 'uses'=>'AdminController@getDashboard',
+                 'as'=>'admin.dashboard'
+            ]);
+
+            Route::resource('blog','BlogController');
+            Route::resource('category','CategoryController');
+            Route::resource('portfolio','PortfolioController');
+
+        });
+
+
+    });
 });

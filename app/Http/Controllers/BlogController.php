@@ -69,7 +69,7 @@ class BlogController extends Controller
         $blog->category()->attach($request->input('category'));
         // return Redirect::to('blog')->with('message','Post Berhasil Di tambah');
         Alert::success('Article Baru Sudah di buat','Create');
-        return Redirect::to('blog');
+        return Redirect::route('admin.blog.index');
 
     }
 
@@ -125,7 +125,7 @@ class BlogController extends Controller
         $blog->category()->sync($request->get('category'));
 
         Alert::info('Article baru anda Ubah','Edit');
-        return Redirect::to('blog');
+        return Redirect::route('admin.blog.index');
 
     }
 
@@ -142,7 +142,7 @@ class BlogController extends Controller
         $deleteImage = $this->deletePhoto($blog->image);
         $blog->delete();
         Alert::info('Article baru anda Hapus','Delete');
-        return Redirect::to('blog');
+        return Redirect::route('admin.blog.index');
     }
 
     // Class Bikinan -->> buat foto

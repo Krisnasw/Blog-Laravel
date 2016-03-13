@@ -15,25 +15,25 @@
 
             <ul class="nav">
                 <li>
-                    <a href="#">
+                    <a href="{{ route('admin.dashboard') }}">
                         <i class="pe-7s-graph"></i>
                         <p>Dashboard</p>
                     </a>
                 </li>
                 <li class="active">
-                    <a href="{{ url('blog') }}">
+                    <a href="{{ route('admin.blog.index') }}">
                         <i class="pe-7s-graph"></i>
                         <p>Blog</p>
                     </a>
                 </li>
                 <li>
-                    <a href="{{ url('category') }}">
+                    <a href="{{ route('admin.category.index') }}">
                         <i class="pe-7s-graph"></i>
                         <p>Category</p>
                     </a>
                 </li>
                 <li>
-                    <a href="{{ url('portfolio')}}">
+                    <a href="{{ route('admin.portfolio.index')}}">
                         <i class="pe-7s-graph"></i>
                         <p>Portfolio</p>
                     </a>
@@ -70,11 +70,17 @@
                     </ul>
 
                     <ul class="nav navbar-nav navbar-right">
-                        <li>
-                           <a href="">
-                               Account
-                            </a>
+                        <li class="dropdown">
+                              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                    {{Auth::user()->username}}
+                                    <b class="caret"></b>
+                              </a>
+                              <ul class="dropdown-menu">
+                                <li><a href="#">Profil</a></li>
+                                <li><a href="{{ route('admin.logout') }}">Logout</a></li>
+                              </ul>
                         </li>
+
                     </ul>
                 </div>
             </div>
