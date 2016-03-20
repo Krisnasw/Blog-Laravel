@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Validator;
 use App\Admin;
+use Alert;
 
 /**
  *
@@ -41,11 +42,9 @@ class AdminController extends Controller
 
         if (!Auth::attempt(['username' => $request['username'] , 'password' => $request['password']])) {
             # code...
-            return redirect()->back()->with(['fail'=>'Could not log you in']);
+            Alert::error('Gagal','Login');
+            return redirect()->back();
         }
-
         return redirect()->route('admin.dashboard');
     }
-
-
 }

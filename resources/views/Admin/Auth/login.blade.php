@@ -6,6 +6,9 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes">
         <link rel='stylesheet prefetch' href='http://fonts.googleapis.com/css?family=Open+Sans'>
         {{ Html::style('assets/css/style_login.css') }}
+        {{-- SweetAlert Plugins   --}}
+        {{ Html::style('assets/plugin/sweetalert/sweetalert.css') }}
+        {{ Html::script('assets/plugin/sweetalert/sweetalert.min.js') }}
     </head>
     <body>
         <div class="cont">
@@ -39,5 +42,10 @@
         </div>
         {{ Html::script('assets/js/jquery.min.js') }}
         {{ Html::script('assets/js/login.js') }}
+        @if (Session::has('sweet_alert.alert'))
+            <script>
+              swal({!! Session::get('sweet_alert.alert') !!});
+            </script>
+        @endif
     </body>
 </html>
